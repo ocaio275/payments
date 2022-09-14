@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize')
 
-const db = require('../db/conn')
+const db = require('../../db/conn')
 
-const Payment = db.define('Payment',{
+const Client = db.define('Client',{
     name: {
         type: DataTypes.STRING,
         require: true
@@ -13,8 +13,8 @@ const Payment = db.define('Payment',{
     },
     status:{
         type: DataTypes.BOOLEAN,
-        defaultValue: false
+       
     },
 })
 
-module.exports = Payment
+module.exports = Client
