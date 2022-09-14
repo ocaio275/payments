@@ -1,7 +1,14 @@
 const Payment = require('../model/Payment')
 
 const registerHooks = require('../helper/register-hooks')
+/* A class that has two methods: createPayment and getPayment. */
 module.exports = class PaymentController {
+    /**
+     * It creates a payment and then triggers a hook.
+     * @param req - The request object
+     * @param res - The response object
+     * @returns The payment object
+     */
     static async createPayment(req, res) {
         try {
             const payment = await Payment.create(req.body)
@@ -14,6 +21,12 @@ module.exports = class PaymentController {
             return res.status(400).json({ message: 'Falha ao criar o pagamento', error: error })
         }
     }
+    /**
+     * It's a function that gets all the payments from the database and returns them in a JSON format.
+     * @param req - The request object.
+     * @param res - response
+     * @returns The list of payments
+     */
     static async getPayment(req, res) {
         try {
             const paymentsList = await Payment.findAll({ raw: true })

@@ -1,7 +1,10 @@
+/* Importing the DataTypes from the sequelize package. */
 const { DataTypes } = require('sequelize')
 
+/* Importing the connection to the database. */
 const db = require('../../db/conn')
 
+/* Creating a table in the database. */
 const Payment = db.define('Payment',{
     name: {
         type: DataTypes.STRING,
@@ -17,4 +20,5 @@ const Payment = db.define('Payment',{
     },
 })
 
+/* Exporting the Payment model to be used in other files. */
 module.exports = Payment
