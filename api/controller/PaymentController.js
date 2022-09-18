@@ -18,7 +18,7 @@ module.exports = class PaymentController {
             }
             return res.status(201).json({ payment })
         } catch (error) {
-            return res.status(400).json({ message: 'Falha ao criar o pagamento', error: error })
+            return res.status(500).json({ message: 'Falha ao criar o pagamento', error: error })
         }
     }
     /**
@@ -32,7 +32,7 @@ module.exports = class PaymentController {
             const paymentsList = await Payment.findAll({ raw: true })
             return res.status(200).json({ data: paymentsList })
         } catch (error) {
-            return res.status(400).json({ message: 'Falha ao carregar lista de pagamento', error: err })
+            return res.status(500).json({ message: 'Falha ao carregar lista de pagamento', error: error })
         }
     }
 }

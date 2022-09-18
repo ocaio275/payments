@@ -4,6 +4,8 @@ const app = express()
 const mysql2 = require('mysql2')
 const conn = require('../db/conn')
 const logger = require('morgan')
+require('./helper/backup-database')
+
 
 /* Importing the PaymentRoutes.js file from the routes folder. */
 const PaymentRoutes = require('./routes/PaymentRoutes')

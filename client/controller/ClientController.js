@@ -8,9 +8,9 @@ module.exports = class ClientController {
  * @param res - The response object.
  * @returns The response is being returned as a string.
  */
-    static async webHook(req, res){
-        console.log('chamada interna', req.body)
+    static async webHook(req, res){        
         const { data } = req.body
+        console.log('chamada interna', req.body)
         await Client.create(data)
         return res.status(200).end()
     }
