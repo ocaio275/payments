@@ -7,7 +7,7 @@ cron.schedule('13 2 * * *', function () {
         shell.exit(1)
     }
     else {
-        const mail = 'ocaio275@gmail.com'
+        const mail = ''
         const msg = `Backup realizado com sucesso  na data: ${Date().toLocaleString()}`
         sendMail(mail, 'Backup completo', msg)
         shell.echo('Backup completo')
